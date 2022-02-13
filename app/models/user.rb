@@ -7,7 +7,14 @@ class User
 
   ## Database authenticatable
   field :email, type: String, default: ''
+  validates_uniqueness_of :name, :email, case_sensitive: false
   field :encrypted_password, type: String, default: ''
+  field :name, type: String, default: ''
+  validates_presence_of :name, message: 'must not be blank'
+  field :role, type: String, default: 'user'
+  field :avatar, type: String, default: 'https://i.pravatar.cc/150?img=2'
+  field :bio, type: String, default: 'short bio'
+  field :posts_counter, type: Integer, default: 0
 
   ## Recoverable
   field :reset_password_token, type: String
