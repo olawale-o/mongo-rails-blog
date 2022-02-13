@@ -10,6 +10,16 @@ class Post
   validates :text, presence: true
 
   belongs_to :user, counter_cache: true
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   include Mongoid::Timestamps
+
+  def self.most_recent(limit = 3)
+    order(created_at: :desc).limit(limit)
+  end
+
+  def most_recent_comments(limit = 5)
+    comments.most_recent_comments(limit)
+  end
 end
