@@ -3,7 +3,7 @@ class Comment
 
   field :text, type: String
 
-  belongs_to :post
+  belongs_to :post, counter_cache: true
   belongs_to :user
   include Mongoid::Timestamps
 end

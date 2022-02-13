@@ -12,7 +12,7 @@ class User
   field :role, type: String, default: 'user'
   field :avatar, type: String, default: 'https://i.pravatar.cc/150?img=2'
   field :bio, type: String, default: 'short bio'
-  field :posts_counter, type: Integer, default: 0
+  field :posts_count, type: Integer, default: 0
   validates :name, presence: true
 
   ## Recoverable
