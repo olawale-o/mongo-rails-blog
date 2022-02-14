@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource param_method: :set_post
   before_action :set_post, only: %i[create edit update]
 
   def index

@@ -2,7 +2,7 @@
   <ul class="profile__list">
     <% @users.each do |u| %>
         <%= link_to user_path(u.id), id: "user_#{u.id}" do %>
-          <li class="card">
+          <li class="card my-2">
             <%= render partial: "user_card", locals: { user: u } %>
           </li>
         <% end %>

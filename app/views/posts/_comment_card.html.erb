@@ -7,11 +7,11 @@
           <span class="comment__item-comment"><%= c.text %> </span>
         </div>
         <div class="card-body">
-          <%# if can? :destroy, c %>
+          <% if can? :destroy, c %>
             <%= button_to comment_path(c.id), method: :delete, class: "trash-btn" do %>
               <i class='bx bx-trash-alt box-icon'></i>
             <% end %>
-          <%# end %>
+          <% end %>
         </div>
       </div>
     </li>
