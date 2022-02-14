@@ -1,30 +1,30 @@
-<div class="form__container">
+<div class="col-md-6 offset-3">
   <h2 class="form__header">Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input", placeholder: "your name" %>
+    <div class="field my-2">
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "your name" %>
     </div>
     
-    <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "you@example.com" %>
+    <div class="field my-2">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "you@example.com" %>
     </div>
 
-    <div class="field">
+    <div class="field my-2">
       <% if @minimum_password_length %>
       <em class="caution">(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "input", placeholder: "******" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "******" %>
     </div>
 
-    <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input", placeholder: "******" %>
+    <div class="field my-2">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "******" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up", class: "btn" %>
+    <div class="d-flex justify-content-center">
+      <%= f.submit "Sign up", class: "btn btn-danger" %>
     </div>
   <% end %>
 

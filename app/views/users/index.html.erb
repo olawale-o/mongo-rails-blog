@@ -1,11 +1,11 @@
-<div class="profile__container">
+<div class="col-md-6 offset-3">
   <ul class="profile__list">
     <% @users.each do |u| %>
-      <li class="profile__item">
         <%= link_to user_path(u.id), id: "user_#{u.id}" do %>
-          <%= render partial: "user_card", locals: { user: u } %>
+          <li class="card">
+            <%= render partial: "user_card", locals: { user: u } %>
+          </li>
         <% end %>
-      </li>
     <% end %>
   </ul>
 </div>

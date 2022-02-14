@@ -1,9 +1,11 @@
-<div class="profile mb-2">
-  <div class="profile__picture">
-    <%= image_tag 'https://i.pravatar.cc/150?img=2', alt: "profile" %>
-  </div>
-  <div class="profile__details">
-    <h6 class="profile__details-name"><%= capitalize(user.name) %></h6>
-    <div class="posts_counter"><%= t("post.total", count: user.posts_count) %></div>
+<div class="card-header">
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag 'https://i.pravatar.cc/150?img=2', alt: "profile", class: "img-fluid img-thumbnail" %>
+    </div>
+    <div class="col-md-9">
+      <h5 class="card-title"><%= capitalize(user.name) %></h5>
+      <p class="posts_counter"><%= t("post.total", count: user.posts_count) %></p>
+    </div>
   </div>
 </div>

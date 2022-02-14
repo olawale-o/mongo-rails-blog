@@ -1,9 +1,6 @@
-<div class="profile__container">
+<div class="col-md-6 offset-3">
   <%= render partial: "user_card", locals: { user: @user } %>
-  <div class="bio">
-    <h5 class="bio__heading">Bio</h5>
-    <p class="bio__text"><%= @user.bio %> </p>
-  </div>
+  <p class="my-3 fs-4"><%= @user.bio %> </p>
   <ul class="post__list">
     <% @posts.each do |p| %>
       <li class="post__item">
@@ -11,7 +8,7 @@
       </li>
     <% end %>
   </ul>
-  <div class="actions">
-    <%= link_to "See all posts", user_posts_path(@user.id), class: "btn" %>
+  <div class="d-flex justify-content-center">
+    <%= link_to "See all posts", user_posts_path(@user.id), class: "btn btn-danger" %>
   <div>
 </div>
